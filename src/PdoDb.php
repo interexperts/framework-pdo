@@ -47,21 +47,14 @@ class PdoDb {
 			$user = $config->get($type, 'user');
 			$password = $config->get($type, 'pass');
 
-			try {
-				if($config->get('system', 'debugmode')){
-					$pdoObject = "\InterExperts\PDO\PdoDebug";
-				}else{
-					$pdoObject = "\PDO";
-				}
+			if($config->get('system', 'debugmode')){
+				$pdoObject = "\InterExperts\PDO\PdoDebug";
+			}else{
+				$pdoObject = "\PDO";
+			}
 
-				PdoDb::$instance[$type] = new $pdoObject("mysql:host=".$host.";dbname=".$database, $user, $password);
-				PdoDb::$instance[$type]->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			}
-			catch(\PDOException $e) {
-				\InterExperts\Smarty::showError("PDO error.".$e->getMessage());
-			}catch(\Exception $e){
-				\InterExperts\Smarty::showError("Er was een fout bij het initialiseren van de database. {$e->getMessage()}");
-			}
+			PdoDb::$instance[$type] = new $pdoObject("mysql:host=".$host.";dbname=".$database, $user, $password);
+			PdoDb::$instance[$type]->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
 			PdoDb::$instance[$type]->exec('SET NAMES utf8');
 		}
