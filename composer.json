@@ -1,0 +1,21 @@
+{
+	"name": "interexperts/pdo",
+	"autoload": {
+		"psr-4": {
+			"InterExperts\\PDO\\": "src/"
+		}
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.5.*",
+		"phpmd/phpmd" : "@stable"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": 	"ssh://git@git.interexperts.nl:2220/framework/Config.git"
+		}
+	],
+	"require": {
+		"interexperts/config": "dev-master"
+	}
+}
