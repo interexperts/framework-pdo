@@ -2,6 +2,7 @@
 	"name": "interexperts/pdo",
 	"homepage": "https://github.com/interexperts/framework-pdo",
 	"license": "MIT",
+    "description": "Wrapper for PDO objects",
 	"autoload": {
 		"psr-4": {
 			"InterExperts\\PDO\\": "src/"
