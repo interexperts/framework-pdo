@@ -12,10 +12,10 @@
 	"repositories": [
 		{
 			"type": "vcs",
-			"url": 	"ssh://git@git.interexperts.nl:2220/framework/Config.git"
+			"url": 	"git@github.com:interexperts/framework-config.git"
 		}
 	],
 	"require": {
-		"interexperts/config": "dev-master"
+		"interexperts/config": "~1.0"
 	}
 }
