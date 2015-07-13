@@ -1,5 +1,7 @@
 {
 	"name": "interexperts/pdo",
+	"homepage": "https://github.com/interexperts/framework-pdo",
+	"license": "MIT",
 	"autoload": {
 		"psr-4": {
 			"InterExperts\\PDO\\": "src/"

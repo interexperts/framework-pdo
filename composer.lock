@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1c7cc29e3287bf15f7cacc762600466f",
+    "hash": "127849334c17414a77f2e048fd55a583",
     "packages": [
         {
             "name": "interexperts/config",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/interexperts/framework-config.git",
-                "reference": "7522c6a95833e05590def908a970c3a391e6f3da"
+                "reference": "1326e2280d9b21696ef613c333cc35bafbd5b3c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/interexperts/framework-config/zipball/7522c6a95833e05590def908a970c3a391e6f3da",
-                "reference": "7522c6a95833e05590def908a970c3a391e6f3da",
+                "url": "https://api.github.com/repos/interexperts/framework-config/zipball/1326e2280d9b21696ef613c333cc35bafbd5b3c0",
+                "reference": "1326e2280d9b21696ef613c333cc35bafbd5b3c0",
                 "shasum": ""
             },
             "require-dev": {
@@ -31,10 +31,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/interexperts/framework-config/tree/master",
+                "source": "https://github.com/interexperts/framework-config/tree/v1.0.2",
                 "issues": "https://github.com/interexperts/framework-config/issues"
             },
-            "time": "2015-07-13 09:32:56"
+            "time": "2015-07-13 10:11:28"
         }
     ],
     "packages-dev": [
