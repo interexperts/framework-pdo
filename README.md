@@ -1,1 +1,3 @@
-Library for reading databases
+# InterExperts framework - PDO library
+
+Library for interacting with databases
