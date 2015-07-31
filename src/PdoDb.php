@@ -24,6 +24,7 @@ class PdoDb {
 	const BOOL_TRUE = '1';
 
 	static private $instance = array();
+	static private $defaultContext = 'db';
 
 	/**
 	 * @codeCoverageIgnore
@@ -38,7 +39,10 @@ class PdoDb {
 	 *	@param	$errors	(optional) Zorgt er voor dat PDO een exception geeft bij SQL-fouten.
 	 * @codeCoverageIgnore
 	*/
-	static function getInstance($type = 'db') {
+	static function getInstance($type = null) {
+		if(is_null($type)){
+			$type = self::$defaultContext;
+		}
 		// Maak een PDO-object aan voor de gegeven $type
 		if (!isset(PdoDb::$instance[$type])) {
 			$config = Config::getInstance();
@@ -59,6 +63,10 @@ class PdoDb {
 			PdoDb::$instance[$type]->exec('SET NAMES utf8');
 		}
 		return PdoDb::$instance[$type];
+	}
+
+	static function setContext($context){
+		self::$defaultContext = $context;
 	}
 
 	/**

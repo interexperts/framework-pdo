@@ -22,7 +22,8 @@ class PdoDbMsSQL {
 	const BOOL_TRUE = '1';
 
 	static private $instance = array();
-	
+	static private $defaultContext = 'ms';
+
 	/**
 	 * @codeCoverageIgnore
 	 */
@@ -34,7 +35,10 @@ class PdoDbMsSQL {
 	 *	anders wordt het bestaande object geretourneerd.
 	 *	@param	$type	(optional) Specifeer welke databaseconfiguratie gebruikt moet worden, standaard 'db' (in $config['db'][...]).
 	*/
-	static function getInstance($type = 'ms', $name = 'default') {
+	static function getInstance($type = null, $name = 'default') {
+		if(is_null($type)){
+			$type = self::$defaultContext;
+		}
 		// Maak een PDO-object aan voor de gegeven $type
 		if (!isset(PdoDbMsSQL::$instance[$type . '-' . $name])) {
 			$config = Config::getInstance();
@@ -52,6 +56,10 @@ class PdoDbMsSQL {
 			
 		}
 		return PdoDbMsSQL::$instance[$type . '-' . $name];
+	}
+
+	static function setContext($context){
+		self::$defaultContext = $context;
 	}
 	
 	/**
