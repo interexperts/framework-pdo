@@ -12,6 +12,13 @@
 		"phpunit/phpunit": "4.5.*",
 		"phpmd/phpmd" : "@stable"
 	},
+    "platform":{
+        "ext-pdo": "*"
+    },
+    "suggest": {
+        "ext-pdo_dblib": "For MSSQL or Sybase databases on Linux/UNIX platform",
+        "ext-pdo_mysql": "For MySQL or MariaDB databases"
+    },
 	"repositories": [
 		{
 			"type": "vcs",
